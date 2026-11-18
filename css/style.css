@@ -1,0 +1,324 @@
+/* ========== VARIÁVEIS DE COR (tema claro) ========== */
+:root {
+    --fundo: #f2f5f0;
+    --superficie: #ffffff;
+    --texto: #14213d;
+    --texto-suave: #4a5775;
+    --destaque: #2f5bff;
+    --destaque-texto: #ffffff;
+    --borda: #d5dccf;
+}
+
+/* ========== TEMA ESCURO ========== */
+body.escuro {
+    --fundo: #101624;
+    --superficie: #1a2236;
+    --texto: #e8ecf7;
+    --texto-suave: #a9b4d0;
+    --destaque: #8fa8ff;
+    --destaque-texto: #101624;
+    --borda: #2c3652;
+}
+
+/* ========== BASE ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Bricolage Grotesque", Arial, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--destaque);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--destaque);
+    outline-offset: 3px;
+}
+
+/* ========== MENU ========== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 32px;
+    background: var(--superficie);
+    border-bottom: 1px solid var(--borda);
+    transition: background 0.3s;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--texto);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 600;
+}
+
+.menu a:hover {
+    color: var(--destaque);
+}
+
+.botao-tema {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.botao-tema:hover {
+    border-color: var(--destaque);
+}
+
+.botao-menu {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--texto);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ========== HOME ========== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 110px 32px 60px;
+}
+
+.hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.hero-sub {
+    font-size: 1.2rem;
+    color: var(--texto-suave);
+    max-width: 460px;
+    margin-bottom: 16px;
+}
+
+.mensagem {
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+    margin-bottom: 28px;
+}
+
+.botao {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--destaque);
+    color: var(--destaque-texto);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.botao:hover {
+    opacity: 0.88;
+}
+
+/* ========== SEÇÕES ========== */
+.secao {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 70px 32px;
+}
+
+.secao h2 {
+    font-size: 2rem;
+    margin-bottom: 28px;
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.habilidades {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.habilidades li {
+    padding: 6px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+    background: var(--superficie);
+    font-weight: 600;
+}
+
+/* ========== PROJETOS ========== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center bottom; /* empurra levemente para baixo para esconder o topo com texto */
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+
+.card h3 {
+    margin-bottom: 6px;
+}
+
+.card p {
+    color: var(--texto-suave);
+}
+
+/* ========== CONTATOS ========== */
+.contatos {
+    list-style: none;
+    margin-top: 16px;
+    display: grid;
+    gap: 8px;
+}
+
+/* ========== RODAPÉ ========== */
+.rodape {
+    text-align: center;
+    padding: 28px 16px;
+    border-top: 1px solid var(--borda);
+    color: var(--texto-suave);
+}
+
+/* ========== RESPONSIVO: TABLET ========== */
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========== RESPONSIVO: CELULAR ========== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 20px;
+    }
+
+    .botao-menu {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 20px;
+        background: var(--superficie);
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .menu.aberto {
+        display: flex;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 100px 20px 40px;
+    }
+
+    .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .secao {
+        padding: 50px 20px;
+    }
+
+    .sobre-grid,
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    body,
+    .navbar {
+        transition: none;
+    }
+}
